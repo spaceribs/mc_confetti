@@ -9,7 +9,6 @@ angular.module('mcConfettiApp')
         'mcIgnore',
         '$timeout',
         '$routeParams',
-        '$location',
         function ($scope, $dialog, localStorageService, mcApi, mcIgnore, $timeout, $routeParams) {
 
             var serverDialog = {

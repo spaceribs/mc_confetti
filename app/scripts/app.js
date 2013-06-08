@@ -129,7 +129,7 @@ if (!Array.prototype.filter) {
 //    );
 //}]);
 
-angular.module('mcConfettiApp', ['ui.ace', 'smartTable.table', 'LocalStorageModule', 'ui.bootstrap', 'ui'])
+angular.module('mcConfettiApp', ['ui.ace', 'LocalStorageModule', 'ui.bootstrap', 'ui'])
     .config(["$routeProvider", function ($routeProvider) {
         $routeProvider
             .when('/', {controller: 'HomeCtrl', templateUrl: "views/home.html"})
@@ -138,8 +138,8 @@ angular.module('mcConfettiApp', ['ui.ace', 'smartTable.table', 'LocalStorageModu
             .otherwise({controller: 'HomeCtrl', templateUrl: "views/home.html"});
     }])
     .constant('prefix', 'mcConfetti')
-    .run( function($rootScope, $location, localStorageService) {
+    .run(['$rootScope', '$location', 'localStorageService', function($rootScope, $location, localStorageService) {
         if (!localStorageService.cookie.get('session')) {
             $location.path("/");
         }
-    });
+    }]);

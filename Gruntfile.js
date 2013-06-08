@@ -70,6 +70,16 @@ module.exports = function (grunt) {
                         ];
                     }
                 }
+            },
+            dist: {
+                options: {
+                    keepalive: true,
+                    middleware: function (connect) {
+                        return [
+                            mountFolder(connect, yeomanConfig.dist)
+                        ];
+                    }
+                }
             }
         },
         open: {
@@ -266,6 +276,7 @@ module.exports = function (grunt) {
                             '*.{ico,txt}',
                             '.htaccess',
                             'components/**/*',
+                            'includes/**/*',
                             'images/{,*/}*.{gif,webp}',
                             'styles/fonts/*'
                         ]
@@ -312,6 +323,25 @@ module.exports = function (grunt) {
         'uglify',
         'rev',
         'usemin'
+    ]);
+
+    grunt.registerTask('buildserver', [
+        'clean:dist',
+        'jshint',
+        'compass:dist',
+        'useminPrepare',
+        'imagemin',
+        'cssmin',
+        'htmlmin',
+        'concat',
+        'copy',
+        'cdnify',
+        'ngmin',
+        'uglify',
+        'rev',
+        'usemin',
+        'connect:dist',
+        'open'
     ]);
 
     grunt.registerTask('default', ['build']);
