@@ -1,0 +1,16 @@
+<div ng-controller="YamlCtrl">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li><a href="#" ng-click="saveFile($event)"><i class="icon-save"></i> Save</a></li>
+                <li><a href="#" ng-click="deleteFile($event)"><i class="icon-trash"></i> Delete</a></li>
+                <li><a href="#" ng-click="reloadFile($event)"><i class="icon-refresh"></i> Reload</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="well code-well">
+        <div ui-ace="editorPref"
+             ng-model="activeItem.yml"
+             scope-instance="aceInstance"></div>
+    </div>
+</div>

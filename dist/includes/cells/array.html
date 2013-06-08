@@ -1,0 +1,11 @@
+<table class="table table-condensed">
+    <tr ng-repeat="val in model">
+        <td><cell-input model="val.val" type="val.type"></cell-input></td>
+        <td><cell-input model="val.type" type="'typeselect'"></cell-input></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <a href="#" ng-click="addField($event)" class="btn btn-block btn-mini"><i class="icon-plus-sign"></i> Add New Field</a>
+        </td>
+    </tr>
+</table>
