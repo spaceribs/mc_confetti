@@ -17,8 +17,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in activeItem.data">
-            <td width="20"><a class="btn btn-mini btn-info" ng-click="removeRow($event)" href="#"><i class="icon-remove-sign"></i></a></td>
+        <tr ng-repeat="(key, row) in activeItem.data">
+            <td width="20"><a class="btn btn-mini btn-info" ng-click="removeRow($event, key)" href="#"><i class="icon-remove-sign"></i></a></td>
             <td><cell-input model="row.key" type="'string'"></cell-input></td>
             <td><cell-input model="row.val" type="row.type"></cell-input></td>
             <td><cell-input model="row.type" type="'typeselect'"></cell-input></td>

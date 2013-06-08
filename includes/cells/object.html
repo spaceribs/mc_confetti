@@ -1,6 +1,6 @@
 <table class="yaml-table table table-condensed">
-    <tr ng-repeat="row in model">
-        <td><a class="btn btn-mini btn-info" ng-click="removeRow($event)" href="#"><i class="icon-remove-sign"></i></a></td>
+    <tr ng-repeat="(index, row) in model">
+        <td width="20"><a class="btn btn-mini btn-info" ng-click="removeRow($event, index)" href="#"><i class="icon-remove-sign"></i></a></td>
         <td><input class="input-mini" type="text" ng-model="row.key" required/></td>
         <td><cell-input class="input-mini" model="row.val" type="row.type"></cell-input></td>
         <td><select class="input-mini" ng-model="row.type" ng-options="type.name as type.label for type in cellTypes"></select></td>

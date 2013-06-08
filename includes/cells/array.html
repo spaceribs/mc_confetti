@@ -1,5 +1,6 @@
 <table class="table table-condensed">
-    <tr ng-repeat="val in model">
+    <tr ng-repeat="(index, val) in model">
+        <td width="20"><a class="btn btn-mini btn-info" ng-click="removeRow($event, index)" href="#"><i class="icon-remove-sign"></i></a></td>
         <td><cell-input model="val.val" type="val.type"></cell-input></td>
         <td><cell-input model="val.type" type="'typeselect'"></cell-input></td>
     </tr>
