@@ -1,0 +1,63 @@
+<div ng-show="server" class="container">
+    <div class="row">
+        <div class="span12">
+            <h4>Server Info</h4>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Server Name</th>
+                    <th>Version</th>
+                    <th>Current Players</th>
+                    <th>Max Players</th>
+                </tr>
+                <tr>
+                    <td>{{server.name}}</td>
+                    <td>{{server.version}}</td>
+                    <td>{{server.players.length}}</td>
+                    <td>{{server.maxPlayers}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <h4>Worlds</h4>
+        </div>
+        <div ng-repeat="world in server.worlds" class="span4">
+            <table class="table table-bordered">
+                <tr>
+                    <th>World Name</th>
+                    <th>Environment</th>
+                </tr>
+                <tr>
+                    <td>{{world.name}}</td>
+                    <td>{{world.environment}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <h4>Plugins</h4>
+        </div>
+        <div class="span12">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Options</th>
+                </tr>
+                <tr ng-class="{'disabled': !plugin.enabled}" ng-repeat="plugin in plugins">
+                    <td><a ng-href="{{plugin.website}}" target="_blank">{{plugin.name}} ({{plugin.version}})</a></td>
+                    <td>{{plugin.description}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn" ui-if="plugin.enabled" title="Disable Plugin" ng-click="disablePlugin(plugin.name)"><i class="icon-minus-sign-alt"></i></a>
+                            <a class="btn" ui-if="!plugin.enabled" title="Enable Plugin" ng-click="enablePlugin(plugin.name)"><i class="icon-plus-sign-alt"></i></a>
+                            <a class="btn" ng-href="#/plugins/{{plugin.name}}"><i class="icon-edit-sign"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

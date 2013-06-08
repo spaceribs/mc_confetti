@@ -1,0 +1,9 @@
+{
+  "name": "Smart-Table",
+  "version": "0.0.0",
+  "commit": "6cb6a160fd30b80b9e37493a722f8a7ea98a9847",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lorenzofox3/Smart-Table.git"
+  }
+}

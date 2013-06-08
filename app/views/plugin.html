@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="span12">
+        <h1>{{plugin.name}}</h1>
+        <hr/>
+    </div>
+    <div class="sidebar-nav span3">
+        <ul class="nav nav-tabs nav-stacked">
+            <li ng-class="{'active':activeItem == item}"
+                ng-repeat="item in activeDir.files | orderBy:'directory'"><a ng-href="#/plugins{{getPath(item)}}">
+                <i ng-class="{ 'icon-folder-open-alt':item.directory, 'icon-file-alt':!item.directory}"></i>
+                {{item.name}}<span ng-show="item.type">.{{item.type}}</span>
+                <i ng-show="item.directory" class="icon-chevron-right action-icon"></i>
+            </a></li>
+        </ul>
+    </div>
+    <div class="span9">
+        <h4>{{activeItem.name}}<span ng-hide="activeItem.directory">.{{activeItem.type}}</span><span ng-show="activeItem.directory">
+            Folder
+        </span></h4>
+        <div ng-include="editorInclude"></div>
+    </div>
+</div>

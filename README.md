@@ -1,0 +1,1 @@
+This is the initial repository for MC_Confetti, an entirely javascript based frontend for the JSONAPI.

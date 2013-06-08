@@ -1,0 +1,9 @@
+{
+  "name": "jsonapi",
+  "version": "0.0.0",
+  "commit": "c359d7f77567056922528b785bfdb904f19d9796",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alecgorge/jsonapi.git"
+  }
+}
