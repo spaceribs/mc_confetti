@@ -31,6 +31,12 @@ angular.module('mcConfettiApp')
             });
         };
 
+        $scope.removeRow = function(e, row) {
+            e.preventDefault();
+
+            $scope.activeItem.data.splice(row,1);
+        };
+
         $scope.addField = function(e, model) {
             e.preventDefault();
 
