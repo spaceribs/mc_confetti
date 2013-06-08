@@ -3,4 +3,4 @@ _site
 node_modules
 .tmp
 .sass-cache
-app/components
+components/js-yaml/test
