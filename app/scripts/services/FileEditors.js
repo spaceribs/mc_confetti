@@ -76,7 +76,7 @@ angular.module('mcConfettiApp')
                 };
 
                 var templates = _.sortBy(filetypes, function(filetype){
-                    var priority = _.reduce(match, function(memo, val, key){
+                    return _.reduce(match, function(memo, val, key){
                         if (val === filetype.match[key]){
                             return memo+1;
                         } else if (typeof filetype.match[key] !== "undefined") {
@@ -85,15 +85,14 @@ angular.module('mcConfettiApp')
                             return memo;
                         }
                     }, 0);
-                    return priority;
                 });
 
                 var template = _.last(templates);
 
                 if (template.generic === true) {
-                    return generic += template.name + ".html";
+                    return generic + template.name + ".html";
                 } else {
-                    return specific += template.name + ".html";
+                    return specific + template.name + ".html";
                 }
             }
         };

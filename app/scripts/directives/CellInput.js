@@ -39,7 +39,6 @@ angular.module('mcConfettiApp')
             }],
             link: function(scope, iElement) {
                 scope.$watch('type', function(newtype, prevtype){
-
                     if (prevtype === "object" && newtype !== "object") {
                         switch (newtype) {
                         case "array":
